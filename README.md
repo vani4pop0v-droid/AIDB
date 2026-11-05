@@ -1,1 +1,0 @@
-# AIDB-CheTK-project
