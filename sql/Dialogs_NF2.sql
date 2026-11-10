@@ -17,4 +17,7 @@ CREATE TABLE Dialogues (
 );
 
 INSERT INTO Dialogues VALUES (1, 8800553535, 'GPT-4o', DATE '2026-01-10');
-INSERT INTO Messages VALUES (1, 1, 'Запрос2', 'Ответ2');
+INSERT INTO Messages VALUES (1, 1, 'Запрос1', 'Ответ1');
+INSERT INTO Messages VALUES (2, 1, 'Не знаю, какая то прикольная запись', 'И не менее прикольный ответ');
+INSERT INTO Dialogues VALUES (9, 2200022000, 'GPT-4o', DATE '2027-09-01')
+INSERT INTO Messages VALUES (1, 9, 'Топ интересных фактов о кошках?', 'У кошек рудиментарна ключица, из за чего они могут пролезать буквально в любую дырень, куда пролизвает их голова');
