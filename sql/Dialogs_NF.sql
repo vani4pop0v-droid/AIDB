@@ -1,16 +1,23 @@
-
-CREATE TABLE Users (
+CREATE TABLE Users (
     User_ID	NUMBER,
+    User_login VARCHAR(100),
+    User_password VARCHAR(100),
+    User_email VARCHAR(100),
+    Number_of_tokens VARCHAR(4096),
     PRIMARY KEY (User_ID)
 );
 
 CREATE TABLE AI_models (
 	Model_ID NUMBER,
+	Model_cost NUMBER,
+	Model_name VARCHAR(100),
+	Model_adress VARCHAR(255),
 	PRIMARY KEY (Model_ID)
 );
 
 CREATE TABLE Dialogue (
 	Dialogue_ID	NUMBER,
+	Dialogue_name VARCHAR(4096),
 	User_ID NUMBER,
 	Model_ID NUMBER,
 	Dialog_Start_Date DATE,
@@ -24,6 +31,7 @@ CREATE TABLE Prompt (
 	Prompt_Order NUMBER,
 	Dialogue_ID NUMBER,
 	Message_text VARCHAR(4096),
+	Creation_date DATE,
 	PRIMARY KEY (Prompt_ID),
 	FOREIGN KEY (Dialogue_ID) REFERENCES Dialogue(Dialogue_ID)
 );
@@ -31,6 +39,8 @@ CREATE TABLE Prompt (
 CREATE TABLE Answer (
 	Answer_ID NUMBER,
 	Answer_text VARCHAR(4096),
+	Creation_date DATE,
+	Abswer_order NUMBER,
 	Prompt_ID NUMBER,
 	PRIMARY KEY (Answer_ID),
 	FOREIGN KEY (Prompt_ID) REFERENCES Prompt(Prompt_ID)
